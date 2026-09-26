@@ -1,23 +1,91 @@
 aid: astrolab
+
 name: AstroLab
-description: 'AstroLab is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Astrolab designs, builds, and operates planetary surface mobility platforms and infrastructure for sustained human and commercial
+  activities on the Moon and Mars. Their flagship rovers, FLIP and FLEX, aim to deliver payloads, power, and logistics support for lunar missions,
+  with upcoming launches scheduled for 2026 and beyond.
+
 url: https://raw.githubusercontent.com/api-evangelist/astrolab/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Space
+- Robotics
+- Lunar
+- Exploration
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Security
+  url: security/astrolab-vulnerability-disclosure.yml
+- type: SecurityTxt
+  url: well-known/astrolab-security.txt
+- type: SecurityTxt
+  url: well-known/astrolab-docs-security.txt
+- type: WellKnown
+  url: well-known/astrolab-well-known.yml
+- type: Hosts
+  url: hosts/astrolab-hosts.yml
+- type: Vendors
+  url: vendors/astrolab-vendors.yml
+- type: Login
+  url: https://www.astrolab.space/login/
+- type: VulnerabilityDisclosure
+  url: security/astrolab-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/astrolab-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.astrolab.space/
+- type: Documentation
+  url: https://www.astrolab.space/about/
+- type: Blog
+  url: https://www.astrolab.space/news/
+- type: Support
+  url: https://www.astrolab.space/contact/
+- type: TermsOfService
+  url: https://www.astrolab.space/legal/
+- type: PrivacyPolicy
+  url: https://www.astrolab.space/legal/
+
+apis:
+- name: AstroLab API
+  description: API documentation is behind Cloudflare Access login, no machine-readable spec discovered.
+  humanURL: https://www.astrolab.space/about/
+  baseURL: null
+  aid: astrolab:astrolab-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-09-26'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

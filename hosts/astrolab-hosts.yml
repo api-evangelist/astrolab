@@ -1,0 +1,71 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 3
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - docs
+  - other
+  - website
+hosts:
+- host: api.astrolab.space
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: astrolab.space
+  role: api
+  relation: own
+- host: docs.astrolab.space
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  title: Sign in ・ Cloudflare Access
+  status: 200
+  registrable_domain: astrolab.space
+  role: docs
+  relation: own
+- host: venturiastrolab.cloudflareaccess.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: cloudflareaccess.com
+  role: other
+  relation: other-domain
+- host: www.astrolab.space
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Login
+  - Website
+  - Documentation
+  - Blog
+  - Support
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  - hosting
+  vendor: cloudflare
+  registrable_domain: astrolab.space
+  role: website
+  relation: own

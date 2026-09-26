@@ -1,0 +1,4 @@
+{
+  "issuer": "https://venturiastrolab.cloudflareaccess.com",
+  "jwks_uri": "https://venturiastrolab.cloudflareaccess.com/cdn-cgi/access/certs"
+}
